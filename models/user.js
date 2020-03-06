@@ -43,7 +43,7 @@ async function login(enteredEmail, enteredPassword) {
     const token = await createToken(enteredEmail);
     return token;
   } catch (err) {
-    return err;
+    return "failed";
   }
 }
 async function signup(enteredAccount, enteredEmail, enteredPassword) {
@@ -67,7 +67,7 @@ async function signup(enteredAccount, enteredEmail, enteredPassword) {
     );
     return "success";
   } catch (err) {
-    return err.message;
+    return "failed";
   }
 }
 async function tokenCheck(token, account) {

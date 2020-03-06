@@ -9,7 +9,7 @@ translate = async (language, message) => {
     );
     return response.data;
   } catch (err) {
-    return err;
+    return "server error";
   }
 };
 

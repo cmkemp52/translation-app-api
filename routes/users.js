@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { login, signup, tokenCheck } = require("../models/user");
+const { login, signup } = require("../models/user");
 
 /* GET users listing. */
 router.post("/sign-up", async (req, res, next) => {
