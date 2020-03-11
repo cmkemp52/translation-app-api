@@ -11,7 +11,7 @@ phraseadd = async (account, token, language, phrase, translation) => {
       [language, phrase, translation]
     );
   } catch (err) {
-    return err;
+    return "error";
   }
 };
 
@@ -20,7 +20,7 @@ phraseremove = async (account, token, id) => {
     const user = await tokenCheck(token, account);
     db.none(`DELETE FROM phrases_id${user.id} WHERE id=${id};`);
   } catch (err) {
-    return err;
+    return "error";
   }
 };
 
@@ -30,7 +30,7 @@ phraseretrieve = async (account, token) => {
     const response = await db.any(`SELECT * FROM phrases_id${user.id}`);
     return response;
   } catch (err) {
-    return err;
+    return "error";
   }
 };
 

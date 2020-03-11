@@ -11,6 +11,7 @@ require("dotenv").config();
 var usersRouter = require("./routes/users");
 var phrasesRouter = require("./routes/phrases");
 var translateRouter = require("./routes/translate");
+var chatRouter = require("./routes/chat");
 
 var app = express();
 
@@ -26,5 +27,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/users", usersRouter);
 app.use("/phrases", phrasesRouter);
 app.use("/translate", translateRouter);
+app.use("/chat", chatRouter);
 
 module.exports = app;
