@@ -23,3 +23,12 @@ body: account, token,
 
 post: /phrases/remove
 body: account, token, id
+
+put: /chat/
+body: account, token, message
+
+get: /:language
+returns last 50 messages
+
+get: /:language/:afterMessage
+returns messages after a certain message ID
