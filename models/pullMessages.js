@@ -3,7 +3,7 @@ const translate = require("./translate.js");
 
 async function pullMessages(language, lastMessage = 0) {
   messages = await db.any(
-    `SELECT * FROM chatroom WHERE id > ${lastMessage} [LIMIT { 50 }] ;`
+    `SELECT * FROM chatroom WHERE id > ${lastMessage} LIMIT 50;`
   );
   console.log(messages);
   for (message in messages) {
