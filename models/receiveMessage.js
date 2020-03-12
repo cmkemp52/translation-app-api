@@ -5,7 +5,7 @@ async function receiveMessage(account, token, message) {
   try {
     await tokenCheck(token, account);
     await db.none(
-      `INSERT INTO chatroom (account, message) VALUES ('${account}','${message}');`
+      `INSERT INTO chatroom (name, message) VALUES ('${account}','${message}');`
     );
     return "success";
   } catch (err) {
