@@ -6,9 +6,12 @@ async function pullMessages(language, lastMessage = 0) {
     `SELECT * FROM chatroom WHERE id > ${lastMessage} LIMIT 50;`
   );
   console.log(messages);
-  for (message in messages) {
-    newMessage = await translate(language, messages[message].message);
-    messages[message] = newMessage.data.data.translations[0].translatedText;
+  if (messages.length > 0) {
+    for (message in messages) {
+      newMessage = await translate(language, messages[message].message);
+      console.log(newMessage);
+      messages[message] = newMessage.data.data.translations[0].translatedText;
+    }
   }
   return messages;
 }
