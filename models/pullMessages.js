@@ -7,9 +7,8 @@ async function pullMessages(language, lastMessage = 0) {
   );
   console.log(messages);
   for (message in messages) {
-    newMessage = await translate(language, messages[message].message).data.data
-      .translations[0].translatedText;
-    messages[message] = newMessage;
+    newMessage = await translate(language, messages[message].message);
+    messages[message] = newMessage.data.data.translations[0].translatedText;
   }
   return messages;
 }
